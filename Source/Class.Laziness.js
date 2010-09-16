@@ -1,35 +1,19 @@
 /*
-script: Class.Laziness.js
+---
 
 description: Class Mutator to reduce memory usage of class' prototype objects and function pointers unless an instance is instantiated
 
 license: MIT-style license
 
 authors:
-- Elad Ossadon ( http://devign.me | http://twitter.com/elado )
+- Elad Ossadon
 
 requires:
 - core:1.2.3/Class
 
 provides: [Class.Laziness]
 
-usage:
-	var MyClass=new Class({
-		// initialize should be outside the Laziness function in order to work properly with Binds mutator
-		// Extends & Implements should be outside the Laziness function
-		initialize:function (a,b) {
-			this.result=a+b;
-		},
-		Laziness:function () { return {
-			getResult:function () {
-				return this.result;
-			},
-			methodA:function () { return "methodA"; },
-			methodB:function () { return "methodB"; },
-			methodC:function () { return "methodC"; },
-			methodD:function () { return "methodD"; }
-		}; }
-	});
+...
 */
 
 Class.Mutators.Laziness=function (getClassContents) {
